@@ -1,0 +1,83 @@
+---
+title: "Problem Set 1 Prokaryotes: The unseen majority"
+author: "Julia Pierce (24366429)"
+date: "2/7/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Module 1 Origins and Earth Systems
+
+**Learning objectives:**
+Describe the numerical abundance of microbial life in relation to the ecology and biogeochemistry of Earth systems.
+
+###What are the primary prokaryotic habitats on Earth and how do they vary with respect to their capacity to support life? Provide a breakdown of total cell abundance for each primary habitat from the tables provided in the text.
+aquatic habitats - contains fewest number of cells (12*10^28)   
+soil- second largest compartment (cell numbers) (26*10^28) second highest density close to (at 0.1m deep, which I think is still soil….)
+marine subsurface- largest numbers of cells (355*10^28), also has BY FAR the highest cell density 
+terrestrial subsurface- second largest (25-250*10^28) 
+
+Diff compartments have varying amount C, and nutrients (etc.) so can only support so many bugs
+
+###What is the estimated prokaryotic cell abundance in the upper 200 m of the ocean and what fraction of this biomass is represented by marine cyanobacterium including Prochlorococcus? What is the significance of this ratio with respect to carbon cycling in the ocean and the atmospheric composition of the Earth?
+8% cells are Prochlorococcus. These bugs fix most of the C in the ocean 
+
+cyanobac density = 4*10^4
+
+###What is the difference between an autotroph, heterotroph, and a lithotroph based on
+Autotroph - CO2 is the carbon source (fix inorgo C into biomass)
+heterotroph - OTHER c is carbon source (assimilate orgo C)
+lithotroph - uses inorganic (minerals) as the energy source (e- donor
+
+###Based on information provided in the text and your knowledge of geography what is the deepest habitat capable of supporting prokaryotic life? What is the primary limiting factor at this depth?
+14 km below sea level (4km ground, below 10 km of water in marianas trench)
+limiting factor = temp (125 Celcius) (roughly +22 C for every m down in ground
+
+###Based on information provided in the text your knowledge of geography what is the highest habitat capable of supporting prokaryotic life? What is the primary limiting factor at this height?
+57-77 km up in atmosphere (bsd paper, but ~20 km where they act metabolizing)
+limiting factor = nutrients (???), maybe cold temperatures?
+
+—likely most stuff in air = transfer (not act habitat
+
+###Based on estimates of prokaryotic habitat limitation, what is the vertical distance of the Earth’s biosphere measured in km?
+14+57= 71 km
+or 14+77=91km
+~24 km if go everest to 4km below marianas)
+
+so between 71-91km
+
+###How was annual cellular production of prokaryotes described in Table 7 column four determined? (Provide an example of the calculation)
+For Marine heterotrophs:
+3.6*10^28 * (365days/yr) *(1/16 day)=8.21*10^29 cells per year
+
+-lots this = viruses, +amg (accessory metabolic genes, eff metabolism other bugs
+
+###What is the relationship between carbon content, carbon assimilation efficiency and turnover rates in the upper 200m of the ocean? Why does this vary with depth in the ocean and between terrestrial and marine habitats?
+The amount of carbon available in the ocean (and any habitat) will determine the turnover rate of bugs - 
+if you don’t have the carbon to make another cell, you won’t be making more cells and therefore the turnover will take longer. 
+If the carbon-assimilation efficiency is constant (20%), bugs with higher carbon will need more carbon to produce another bug as a portion of the carbon you take in is 
+lost through inefficiencies. 
+
+ The carbon content decreases with depth. In both habitats there is less other life as you go deeper in the ocean/terrestrial habitats. Plants are on the surface of terrestrail habitats, and most marine life remains in the first few (hundred) meters of the ocean, due to oxygen and sunlight contraints. If there is less other life, there will be fewer carbon sources as you go deeper into these environments, and thus there will be less available carbon 
+
+
+5-20 fg of C/cell, avg 10 fg C/cell =10^-30 Peta grams/cell*3.6*10^28 cells=    ______ Pg C in marine heterotrophs *4 = ____Pg/yr C used
+where 4 is from the C assimilation efficiency
+
+~51 Pg/yr * 85% consumed = 43 Pg C/yr
+(43 Pg/yr)/(_____Pg/yr C used) = 14.9 each turnover  ——> 24.5 days per turnover
+
+###How were the frequency numbers for four simultaneous mutations in shared genes determined for marine heterotrophs and marine autotrophs given an average mutation rate of 4 x 10-7 per DNA replication? (Provide an example of the calculation with units. Hint: cell and generation cancel out)
+4*10^-7)^4 = 2.56*10^-26 mutations/generation
+
+^4 in first step from having four mutations at once (4*10^-7 =one mutation)
+
+3.6*10^28 cells *(365 d/yr)*(1turnover/16days)=8.2*10^29 cells/yr * 2.56*10^-26 mutations/generation = 2.1*10^4 mutations/yr
+
+###Given the large population size and high mutation rate of prokaryotic cells, what are the implications with respect to genetic diversity and adaptive potential? Are point mutations the only way in which microbial genomes diversify and adapt?
+
+
+###What relationships can be inferred between prokaryotic abundance, diversity, and metabolic potential based on the information provided in the text?

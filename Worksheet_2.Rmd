@@ -1,0 +1,40 @@
+---
+title: "Worksheet_2"
+author: "Julia Pierce"
+date: "2/7/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+**Learning objectives:**
+Describe the numerical abundance of microbial life in relation to the ecology and biogeochemistry of Earth systems.
+
+###What were the main questions being asked?
+How many + where are microbes
+
+###What were the primary methodological approaches used?
+used previous data (samples from diff “layers of Earth”) + what area/vol that “compartment” of Earth covers
+—used small sample number to represent large area (three samples for subsurface) etc.
+-how did they calc the diff area for forest vs. land area??? (GIS?)
+
+###Summarize the main results or findings
+prokaryotes everywhere (mostly subsurface, etc); max up to 57-77m in air
+total numbers:
+genetic diversity (turnover time and large populations)
+lots of nutrients (C, N, P) in bugs
+using the amt C available in E compartment and turnover rate to check their numbers (subsurface a bit funky)
+ also went through other areas bugs found (animals, leaves, air) that they neglected, cuz orders magnitude smaller
+
+###Do new questions arise from the results?
+mutations - methods phylogenetic analysis, how act. define/ categorize 
+limited knowledge of the act. bugs, and what they can do (think annamox recently discovered) and inability to culture most bugs
+
+
+better number for subsurface, better sampling methods available? any other changes to numbers?? (Paper twenty yrs old, are numbers diff??)
+
+###Were there any specific challenges or advantages in understanding the paper (e.g. did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?
+no error quantification (talk about poss, but no values given)
+Some calcs not discussed/explained (turnover rate, etc.)
