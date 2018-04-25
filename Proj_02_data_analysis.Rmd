@@ -1,0 +1,547 @@
+---
+title: "Project2_Additional_Analysis"
+author: "Julia Pierce (24366429)"
+date: "4/21/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width=10, fig.height=10)
+library(repr)
+library(knitr)
+library(tidyverse)
+library(cowplot)
+library(phyloseq)
+library(magrittr)
+library(dplyr)
+library(ggsn)
+library(sf)
+```
+
+```{r}
+load("~/Documents/MICB425_portfolio/mothur_phyloseq.RData")
+metadata = data.frame(mothur@sam_data)
+
+nosZ.RNA.10m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_10m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+  select(Tax.RNA.10 = Confident_Taxonomy, Abund.RNA.10 = Abundance, Query)
+
+nosZ.RNA.100m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_100m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+  select(Tax.RNA.100 = Confident_Taxonomy, Abund.RNA.100 = Abundance, Query)
+
+nosZ.RNA.120m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_120m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.RNA.120 = Confident_Taxonomy, Abund.RNA.120 = Abundance, Query)
+
+nosZ.RNA.135m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_135m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.RNA.135 = Confident_Taxonomy, Abund.RNA.135 = Abundance, Query)
+    
+nosZ.RNA.150m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_150m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.RNA.150 = Confident_Taxonomy, Abund.RNA.150 = Abundance, Query)
+
+nosZ.RNA.165m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_165m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.RNA.165 = Confident_Taxonomy, Abund.RNA.165 = Abundance, Query)
+
+nosZ.RNA.200m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_200m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.RNA.200 = Confident_Taxonomy, Abund.RNA.200 = Abundance, Query)
+  
+  
+    
+nosZ.DNA.10m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_10m/final_outputs/marker_contig_map.tsv") %>% 
+  select(Tax.DNA.10 = Confident_Taxonomy, Abund.DNA.10 = Abundance, Query)
+
+nosZ.DNA.100m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_100m/final_outputs/marker_contig_map.tsv") %>% 
+  select(Tax.DNA.100 = Confident_Taxonomy, Abund.DNA.100 = Abundance, Query)
+
+nosZ.DNA.120m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_120m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.DNA.120 = Confident_Taxonomy, Abund.DNA.120 = Abundance, Query)
+
+nosZ.DNA.135m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_135m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.DNA.135 = Confident_Taxonomy, Abund.DNA.135 = Abundance, Query)
+    
+nosZ.DNA.150m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_150m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.DNA.150 = Confident_Taxonomy, Abund.DNA.150 = Abundance, Query)
+
+nosZ.DNA.165m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_165m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.DNA.165 = Confident_Taxonomy, Abund.DNA.165 = Abundance, Query)
+
+nosZ.DNA.200m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_200m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.DNA.200 = Confident_Taxonomy, Abund.DNA.200 = Abundance, Query)
+
+
+nosZ.all = nosZ.RNA.10m %>% 
+  full_join(nosZ.RNA.100m, by = "Query") %>%
+  full_join(nosZ.RNA.120m, by = "Query") %>%
+  full_join(nosZ.RNA.135m, by = "Query") %>%
+  full_join(nosZ.RNA.150m, by = "Query") %>%
+  full_join(nosZ.RNA.165m, by = "Query") %>%
+  full_join(nosZ.RNA.200m, by = "Query") %>%
+  full_join(nosZ.DNA.10m, by = "Query") %>%
+  full_join(nosZ.DNA.100m, by = "Query") %>%
+  full_join(nosZ.DNA.120m, by = "Query") %>%
+  full_join(nosZ.DNA.135m, by = "Query") %>%
+  full_join(nosZ.DNA.150m, by = "Query") %>%
+  full_join(nosZ.DNA.165m, by = "Query") %>%
+  full_join(nosZ.DNA.200m, by = "Query") %>%
+
+  mutate(Taxonomy = ifelse(!is.na(Tax.RNA.10), Tax.RNA.10,
+                    ifelse(!is.na(Tax.RNA.100), Tax.RNA.100,
+                    ifelse(!is.na(Tax.RNA.120), Tax.RNA.120,
+                    ifelse(!is.na(Tax.RNA.135), Tax.RNA.135,
+                    ifelse(!is.na(Tax.RNA.150), Tax.RNA.150,
+                    ifelse(!is.na(Tax.RNA.165), Tax.RNA.165,
+                    ifelse(!is.na(Tax.RNA.200), Tax.RNA.200,
+                    ifelse(!is.na(Tax.DNA.10), Tax.DNA.10,
+                    ifelse(!is.na(Tax.DNA.100), Tax.DNA.100,
+                    ifelse(!is.na(Tax.DNA.120), Tax.DNA.120,
+                    ifelse(!is.na(Tax.DNA.135), Tax.DNA.135,
+                    ifelse(!is.na(Tax.DNA.150), Tax.DNA.150,
+                    ifelse(!is.na(Tax.DNA.165), Tax.DNA.165,
+                    ifelse(!is.na(Tax.DNA.200), Tax.DNA.200,
+                           "unclassified"))))))))))))))) %>% 
+
+  select(-starts_with("Tax.")) %>% 
+  gather("Key", "Abundance", starts_with("Abund")) %>% 
+  separate(Key, c("Key","Type","Depth_m"), by = ".") %>% 
+  select(Depth_m, Type, Abundance, Taxonomy, Query) %>% 
+  mutate(Depth_m = as.numeric(Depth_m)) %>%
+  mutate(Abundance = as.numeric(Abundance)) %>%
+  separate(Taxonomy, into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep="; ")
+  
+  nosZ.all["N2O_nM"] = nosZ.all["Depth_m"]
+
+number_rows = nrow(nosZ.all)
+ i = 1
+ 
+ for(i in 1:number_rows){
+  if (nosZ.all[i,"N2O_nM"] == 10){
+    nosZ.all[i,"N2O_nM"] = 0.849
+  }
+ }
+ 
+ i = 1
+ 
+ for(i in 1:number_rows){
+  if (nosZ.all[i,"N2O_nM"] == 100){
+    nosZ.all[i,"N2O_nM"] = 18.087
+  }
+ }
+ 
+i = 1
+ 
+ for(i in 1:number_rows){
+  if (nosZ.all[i,"N2O_nM"] == 120){
+    nosZ.all[i,"N2O_nM"] = 16.304
+  }
+ } 
+ 
+i = 1
+ 
+ for(i in 1:number_rows){
+  if (nosZ.all[i,"N2O_nM"] == 135){
+    nosZ.all[i,"N2O_nM"] = 12.909
+  }
+ }
+ 
+ i = 1
+ 
+ for(i in 1:number_rows){
+  if (nosZ.all[i,"N2O_nM"] == 150){
+    nosZ.all[i,"N2O_nM"] = 11.815
+  }
+ }
+ 
+ i = 1
+ 
+ for(i in 1:number_rows){
+  if (nosZ.all[i,"N2O_nM"] == 165){
+    nosZ.all[i,"N2O_nM"] = 6.310
+  }
+ }
+ 
+ i = 1
+ 
+ for(i in 1:number_rows){
+  if (nosZ.all[i,"N2O_nM"] == 200){
+    nosZ.all[i,"N2O_nM"] = 0.000
+  }
+ }
+
+nosZ.all
+```
+## Example plots
+#### How does the DNA abundance of your gene of interest differ with depth?
+
+```{r}
+nosZ.all %>% 
+  filter(Type == "DNA") %>%
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+  
+ggplot(aes(x = "nosZ" , y = Depth_m)) +
+  geom_point(aes(size = Abundance)) +
+  scale_y_reverse(lim=c(200,10)) +
+  labs(title = "Abundance of the nosZ gene (DNA) at different depths",
+       x = "") +
+  theme_classic()
+```
+
+#### How does the RNA abundance of your gene of interest differ with depth? Is this similar to the DNA levels?
+
+```{r plot02}
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+
+ggplot(aes(x = Type, y = Depth_m)) +
+  geom_point(aes(size = Abundance)) +
+  scale_y_reverse(lim=c(200,10)) +
+  labs(title = "Abundance of the nosZ gene (DNA vs. RNA) at different depths",
+       x = "") +
+  theme_classic()
+```
+
+#### What taxa are responsible for your gene of interest? Are they the same with depth? With DNA versus RNA?
+```{r plot03}
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+  
+ggplot(aes(x = Genus, y = Depth_m)) +
+  geom_point(aes(size = ifelse(Abundance == 0, NA, Abundance), color = Type), position = position_dodge(0.5)) +
+  scale_y_reverse(lim=c(200,10)) +
+  labs(title = "Abundance of genera with nosZ (DNA vs. RNA) at different depths") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_size_continuous(name = "Abundance")
+```
+
+Or you could facet the data.
+```{r plot04}
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+  
+ggplot(aes(x = Genus, y = Depth_m)) +
+  geom_point(aes(size = ifelse(Abundance == 0, NA, Abundance))) +
+  scale_y_reverse(lim=c(200,10)) +
+  facet_wrap(~Type) +
+  labs(title = "Abundance of genera with nosZ (DNA vs. RNA) at different depths") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_size_continuous(name = "Abundance")
+```
+
+#### How does the abundance of your gene of interest relate to nitrogen species in Saanich?
+
+```{r plot05}
+#metadata = data.frame(mothur@sam_data)
+plot1 = nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+
+ggplot(aes(x = Genus, y = Depth_m)) +
+  geom_point(aes(size = ifelse(Abundance == 0, NA, Abundance), color = Type), position = position_dodge(0.5)) +
+  scale_y_reverse(lim=c(200,10)) +
+  labs(y = "") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  #options(repr.plot.width=5, repr.plot.height=5) +
+  scale_size_continuous(name = "Abundance")
+
+plot2 = metadata %>% 
+  arrange(Depth_m) %>% 
+
+ggplot(aes(x = N2O_nM, y = Depth_m)) +
+  geom_point() +
+  geom_path(aes(group = 1)) +
+  scale_y_reverse(lim=c(200,10)) +
+  #theme_classic() +
+  #options(repr.plot.width=5, repr.plot.height=3) +
+  labs(y = "Depth (m)",
+       x = "Nitrous Oxide (nM)")
+
+plot_grid(plot2, plot1, labels=c("A", "B"), rel_widths=c(1/4, 3/4))
+```
+
+**Depth**
+General linear model for each OTU  
+```{r}
+#Cellulophaga
+nosZ.all %>% 
+  filter(Genus=="Cellulophaga") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary() 
+
+#DSM
+nosZ.all %>% 
+  filter(Genus=="DSM") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary() 
+
+#Geobacillus
+nosZ.all %>% 
+  filter(Genus=="Geobacillus") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Ignavibacterium
+nosZ.all %>% 
+  filter(Genus=="Ignavibacterium") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Leptospira
+nosZ.all %>% 
+  filter(Genus=="Leptospira") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Maribacter
+nosZ.all %>% 
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Pseudovibrio
+nosZ.all %>% 
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Pryobaculum
+nosZ.all %>% 
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Rhodanobacter
+nosZ.all %>% 
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Robiginitalea
+nosZ.all %>% 
+  filter(Genus=="Robiginitalea") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#unclassified
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>%
+  filter(Genus=="unclassified") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Overall
+nosZ.all %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+```
+**Repeated for all OTUs within domain and then corrected for multiple comparisons.**
+
+```{r}
+p.adjust(c(0.9862, 0.4262, 0.6306, 0.6306, 0.6306, 0.6306, 0.3823, 0.0002365, 0.0005024), method="fdr")
+```
+
+Plots to go along with these tests.
+```{r}
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>%
+  filter(Genus =="Cellulophaga" | Genus =="DSM" | Genus =="Maribacter" | Genus =="Robiginitalea" | Genus =="unclassified") %>% 
+
+ggplot() +
+  geom_point(aes(x=Depth_m, y=Abundance)) +
+  geom_smooth(method='lm', aes(x=Depth_m, y=Abundance)) +
+  facet_wrap(~Genus, scales="free_y") +
+  labs(title="Abundance of Genera containing nosZ across depth")
+```
+
+```{r}
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>%
+
+ggplot() +
+  geom_point(aes(x=Depth_m, y=Abundance)) +
+  geom_smooth(method='lm', aes(x=Depth_m, y=Abundance)) +
+  facet_wrap(~Genus, scales="free_y") +
+  labs(title="Abundance of Genera containing nosZ across depth")
+```
+```{r}
+#RNA
+nosZ.all %>% 
+  filter(Type=="RNA") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#DNA
+nosZ.all %>% 
+  filter(Type=="DNA") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+```
+**Repeated for all OTUs within domain and then corrected for multiple comparisons.**
+
+```{r}
+p.adjust(c(0.0006461, 0.1224), method="fdr")
+```
+```{r}
+nosZ.all %>% 
+
+ggplot() +
+  geom_point(aes(x=Depth_m, y=Abundance)) +
+  geom_smooth(method='lm', aes(x=Depth_m, y=Abundance)) +
+  facet_wrap(~Type, scales="free_y") +
+  labs(title="Abundance of Genera containing nosZ across depth")
+```
+
+
+**N2O**
+General linear model for each OTU  
+```{r}
+#Cellulophaga
+nosZ.all %>%
+  filter(Genus=="Cellulophaga") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary() 
+
+#DSM
+nosZ.all %>% 
+  filter(Genus=="DSM") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary() 
+
+#Geobacillus
+nosZ.all %>% 
+  filter(Genus=="Geobacillus") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#Ignavibacterium
+nosZ.all %>% 
+  filter(Genus=="Ignavibacterium") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#Leptospira
+nosZ.all %>% 
+  filter(Genus=="Leptospira") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#Maribacter
+nosZ.all %>%
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#Pseudovibrio
+nosZ.all %>% 
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#Pryobaculum
+nosZ.all %>% 
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#Rhodanobacter
+nosZ.all %>%
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#Robiginitalea
+nosZ.all %>% 
+  filter(Genus=="Robiginitalea") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#unclassified
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>%
+  filter(Genus=="unclassified") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#Overall
+nosZ.all %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+```
+**Repeated for all OTUs within domain and then corrected for multiple comparisons.**
+
+```{r}
+p.adjust(c(0.9122, 0.4747, 0.6724, 0.6724, 0.6724, 0.6724, 0.3823, 0.0002699, 0.0006377), method="fdr")
+```
+
+Plots to go along with these tests.
+```{r}
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>%
+  filter(Genus =="Cellulophaga" | Genus =="DSM" | Genus =="Maribacter" | Genus =="Robiginitalea" | Genus =="unclassified") %>% 
+
+ggplot() +
+  geom_point(aes(x=N2O_nM, y=Abundance)) +
+  geom_smooth(method='lm', aes(x=N2O_nM, y=Abundance)) +
+  facet_wrap(~Genus, scales="free_y") +
+  labs(title="Abundance of Genera containing nosZ across N2O concentration")
+```
+
+```{r}
+nosZ.all %>% 
+  
+ggplot() +
+  geom_point(aes(x=N2O_nM, y=Abundance)) +
+  geom_smooth(method='lm', aes(x=N2O_nM, y=Abundance)) +
+  facet_wrap(~Genus, scales="free_y") +
+  labs(title="Abundance of Genera containing nosZ across N2O concentration")
+```
+```{r}
+#RNA
+nosZ.all %>% 
+  filter(Type=="RNA") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+
+#DNA
+nosZ.all %>% 
+  filter(Type=="DNA") %>% 
+
+  lm(Abundance ~ N2O_nM, .) %>% 
+  summary()
+```
+**Repeated for all OTUs within domain and then corrected for multiple comparisons.**
+
+```{r}
+p.adjust(c(0.0006846, 0.19), method="fdr")
+```
+```{r}
+nosZ.all %>% 
+  
+ggplot() +
+  geom_point(aes(x=N2O_nM, y=Abundance)) +
+  geom_smooth(method='lm', aes(x=N2O_nM, y=Abundance)) +
+  facet_wrap(~Type, scales="free_y") +
+  labs(title="Abundance of Genera containing nosZ across N2O concentration")
+```

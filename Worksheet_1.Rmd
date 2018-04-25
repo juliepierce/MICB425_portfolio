@@ -5,39 +5,35 @@ date: January 18, 2018
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+### Evidence Worksheet_01 "Prokaryotes: The Unseen Majority"
+#### Learning objectives:
+* Describe the numerical abundance of microbial life in relation to the ecology and biogeochemistry of Earth systems.
 
+**What were the main questions being asked?**  
+The number of microbes in the different "compartments" of the Earth - aquatic habitats, soil, marine subsurface, and terrestrial subsurface. 
 
-#Module 1 Origins and Earth Systems
+**What were the primary methodological approaches used?**  
+To determine the number of microbes, previous data was used. Samples measuring cell density from each of the compartments were used to determine an average cell denisty. This value (number of bugs/mL) was then multiplied by the volume of the Earth occupied by the compartment.
 
-**Learning objectives:**
-Describe the numerical abundance of microbial life in relation to the ecology and biogeochemistry of Earth systems.
+Due to data limitations, a small number of samples were used to represent each of these compartments, with only three samples used to determine the cell denisty in the subsurface.
 
-###What were the main questions being asked?
-How many + where are microbes
+**Summarize the main results or findings**  
+-Prokaryotes are found in great numbers throughout the different habitats of the Earth (415-640 x 10^28^ cells total), with the largest number found in the subsurface.
 
-###What were the primary methodological approaches used?
-used previous data (samples from diff “layers of Earth”) + what area/vol that “compartment” of Earth covers
-—used small sample number to represent large area (three samples for subsurface) etc.
--how did they calc the diff area for forest vs. land area??? (GIS?)
+-Microbes can be found as far as 4km deep in the subsurface, and up to 57-77km in the atmosphere.
 
-###Summarize the main results or findings
-prokaryotes everywhere (mostly subsurface, etc); max up to 57-77m in air
-total numbers:
-genetic diversity (turnover time and large populations)
-lots of nutrients (C, N, P) in bugs
-using the amt C available in E compartment and turnover rate to check their numbers (subsurface a bit funky)
- also went through other areas bugs found (animals, leaves, air) that they neglected, cuz orders magnitude smaller
+-The number of prokaryotic cells in three other habitats was also calculated: animal guts, the air, and on leaves, but these numbers were orders of magnitude smaller than the other four discussed habitats and thus were not included in the total number of cells.
 
-###Do new questions arise from the results?
-mutations - methods phylogenetic analysis, how act. define/ categorize 
-limited knowledge of the act. bugs, and what they can do (think annamox recently discovered) and inability to culture most bugs
+-There is abundant carbon, nitrogen, and phosphorus contained in microbial biomass, an order of magnitude larger than that contained in plants. Using an average cellular content of carbon, nitrogen, and phosphorus it is estimated that 353-546 Pg of carbon, 85-130 Pg of nitrogen, and 9-14 Pg of phosphorus are contained in prokaryotes.
 
+-By combining the cellular carbon content and amount of carbon available in the different enviornmental compartments, the turnover rates reported from other sources can be verified; the amount of carbon required for cellular synthesis each year cannot exceed the available carbon in each habitat. Using this method, marine and soil numbers were verified, but it was determined that the subsurface biomass may be overestimated.
 
-better number for subsurface, better sampling methods available? any other changes to numbers?? (Paper twenty yrs old, are numbers diff??)
+-Using the turnover time and population in each environmental compartment, prokaryotic genetic diversity was discussed. Using mutation rates (mutations per gene per DNA replication), it can be determined that the rare event of four silumtaneous mutations will occur on a timescale of hours, and five simulatneous mutations will occur every 60 years. Such frequent mutations increase prokaryotic genetic diversity.
 
-###Were there any specific challenges or advantages in understanding the paper (e.g. did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?
-no error quantification (talk about poss, but no values given)
-Some calcs not discussed/explained (turnover rate, etc.)
+**Do new questions arise from the results?**  
+The method of cellular density determination was not discussed. Assuming the denisty was determined using a method reliant on cellular culture (such as heterotrophic plate counts, etc), how were accurate numbers determined despite our inability to culture most microbes?
+
+Only three samples were used to determine the cell density for the subsurface, partially due to the difficulty of proper sampling. Are there better methods for sampling now, twenty years later? Have new samples been taken, and have these new data affected the subsurface estimate?
+
+**Were there any specific challenges or advantages in understanding the paper (e.g. did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?**  
+The paper doesn't provide any error estimates - the possibility of errors is discussed, but there is no error quantification. Additionally, some calculations weren't comprehensively discussed - the calculation for turnover rate includes a multiplier of four, even though the explanation in the paper cites a carbon assimilation efficiency of 20% (so an expected multiplier of five).

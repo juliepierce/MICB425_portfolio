@@ -1,40 +1,59 @@
 ---
-title: "Worksheet_2"
+title: "Worksheet_02"
 author: "Julia Pierce"
 date: "2/7/2018"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+### Evidence Worksheet_02 “Life and the Evolution of Earth’s Atmosphere”
+#### Learning objectives: 
+* Comment on the emergence of microbial life and the evolution of Earth systems
+    
+    
+* Indicate the key events in the evolution of Earth systems at each approximate moment in the time series. If times need to be adjusted or added to the timeline to fully account for the development of Earth systems, please do so. 
 
-**Learning objectives:**
-Describe the numerical abundance of microbial life in relation to the ecology and biogeochemistry of Earth systems.
+    + **4.6 billion years ago**  Solar system formed after local supernova(s)
+    
+    + **4.5 billion years ago**  Earth is struck, tilting the Earth's spin and ejecting molten material that became the moon
+    
+    + **4.1 billion years ago**  (Controversial) evidence of life in zircons, surface temperatures ~100C, Earth a steam greenhouse
+    
+    + **4.0 billion years ago**  Evidence of plate subduction
+    
+    + **3.8 billion years ago**  Life likely already existed on Earth at this point, evidneced by rocks in Greenland with evidence of deposition (sedimentary rocks); end of meteorite bombardment of Earth, which could have been responsible for bringing life to Earth or possibly spreading life from Earth; possibility of water oceans on Earth
+    
+    + **3.75 billion years ago**  Methanogenesis occuring; divison of life into bacteria and archaea
+    
+    + **3.5 billion years ago**  Certain that life present, with claims of first fossil microbial biofilms and stromatolites, and carbonate showing isotopic fractionation, likely due to Rubisco; cyanobacteria exist, likely a chimera of purple and green bacteria, live wherever CO2 and water present and producing oxygen at levels similar to today
 
-###What were the main questions being asked?
-How many + where are microbes
+    + **3.0 billion years ago**  Stromatolites formed by microbial depositions formed in Steep Rock, Ontario and Pongola Supergroup, South Africa
+    
+    + **2.7 billion years ago**  Stromatolites, microbial mats, and biofilms found from this period; biological lipids preserved in rocks from Pilbara, Western Australia give evidence for cyanobacteria and eukaryotes
+    
+    + **2.2 billion years ago**  Sharp increase in atmospheric oxygen, attributed to cyanobacteria; up to this point, there was little evidence of oxidizing conditions with rocks containing typically oxidized materials (detrital pyrite, siderite, and uranite); rocks (redbeds) showing evidence of oxidizing conditions become more widespread after this point
 
-###What were the primary methodological approaches used?
-used previous data (samples from diff “layers of Earth”) + what area/vol that “compartment” of Earth covers
-—used small sample number to represent large area (three samples for subsurface) etc.
--how did they calc the diff area for forest vs. land area??? (GIS?)
-
-###Summarize the main results or findings
-prokaryotes everywhere (mostly subsurface, etc); max up to 57-77m in air
-total numbers:
-genetic diversity (turnover time and large populations)
-lots of nutrients (C, N, P) in bugs
-using the amt C available in E compartment and turnover rate to check their numbers (subsurface a bit funky)
- also went through other areas bugs found (animals, leaves, air) that they neglected, cuz orders magnitude smaller
-
-###Do new questions arise from the results?
-mutations - methods phylogenetic analysis, how act. define/ categorize 
-limited knowledge of the act. bugs, and what they can do (think annamox recently discovered) and inability to culture most bugs
+    + **2.1 billion years ago**  First definite evidence of cyanobacteria, via fossils
+    
+    + **1.5 billion years ago**  Division of eukaryotes into modern plants, fungi, and animals, but likely still single-cell organisms
+    
+    + **550,000 years ago**  Start of the Phanerozoic era, and the Cambrian explosion 
+    
+    + **200,000 years ago**  First humans emerge
 
 
-better number for subsurface, better sampling methods available? any other changes to numbers?? (Paper twenty yrs old, are numbers diff??)
+ * **Describe the dominant physical and chemical characteristics of Earth systems at the following waypoints:**  
 
-###Were there any specific challenges or advantages in understanding the paper (e.g. did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?
-no error quantification (talk about poss, but no values given)
-Some calcs not discussed/explained (turnover rate, etc.)
+    + **Hadean (4.6 - 4.0 Ga)**  
+    Aquatic chemistry dominated by volcanism, making a long lasting primeaval soup unlikely. ROughly one third of the hydrogen contained in the oceans lost to space. Early in ear, Earth still molten, later in the ear either global glaciation with surface heating from meteorite bombardment, or high surface temperatures from greenhouse effeect arising from CO2 rich oceans.
+    
+    + **Archean (4.0 - 2.5 Ga)** 
+    Microbial life diversifying, splitting off into high temperature fermenters and hydrogen users, anoxygenic     photosynthesizers (green and purple), cyanobacteria, sulfer-producing bacteria, methanogens (hyperthermophiles and lower temperatures), and salt-loving archaea. Low amounts of atmospheric oxygen. CO2 and sulfer released by volcanic activity likely sufficient to support chmotrohpic life (CO2, SO4, CH4 and H2S). Earth likely frozen (oceans mostly covered by ice) unless methane atmospheric sontent high enough to produce a greenhouse effect.
+    
+    + **Precambrian (~2.5 Ga)** 
+    Atmospheric oxygen levels rising, leading to oxidizing conditions. As oxygen levels rise, anaerobic microbes are being pushed into smaller environmental niches.
+    
+    + **Proterozoic (2.5 - 0.5 Ga)** 
+    Oxidizing conditions developing, helped along by an early spike in atmospheric oxygen. Widespread oxygenic photosynthesis. Nitrogen fixation develops. Possible there were periods when methane atmospheric content was high, which was then replaced by oxygen.
+    
+    + **Phanerozoic (0.5 Ma - present day)**  
+    The ear of "visible life"; emergence of many new species of animals and plants, both aquatic and terrestrial. Atmospheric oxygen levels rise, which helps spur more life. This era includes Pangea, and physical and chemical characteristics are much the same as today.  

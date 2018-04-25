@@ -1,0 +1,49 @@
+---
+title: "DS ggplot Tutorial Exercises"
+author: "Julia Pierce (24366429)"
+date: "2/16/2018"
+output: html_document
+---
+
+```{r}
+library(phyloseq)
+library(knitr)
+library(tidyverse)
+```
+
+#Exercise 1
+```{r}
+metadata=read.table(file="Saanich.metadata.txt", header=TRUE, row.names=1, sep="\t", na.strings="NAN")
+load("phyloseq_object.RData")
+
+ggplot(metadata, aes(x=SiO2_uM, y=Depth_m)) +
+  geom_point(shape=17, color="purple", size=2)
+```
+
+#Exercise 2
+```{r}
+metadata %>% 
+  mutate(Temperature_F = (Temperature_C*(9/5))+32) %>%
+  ggplot() + geom_point(aes(x=Temperature_F, y=Depth_m))
+```
+
+#Exercise 3
+```{r, fig.width=23, fig.height=6}
+physeq
+physeq_percent = transform_sample_counts(physeq, function(x) 100 * x/sum(x))
+plot_bar(physeq_percent, fill="Family") + 
+  geom_bar(aes(fill=Genus), stat="identity") +
+  labs( x = "Sample Depth(m)", y = "Abundance (%)", title = "Family Abundance Through Saanich Inlet Depth") +
+  theme(legend.position="right")
+```
+
+#Exercise 4
+```{r}
+metadata %>% 
+  gather(metadata, key = "key", O2_uM, PO4_uM, SiO2_uM, NO3_uM, NH4_uM, NO2_uM) %>%
+  ggplot() + geom_point(aes(x=Depth_m, y=metadata)) +
+  geom_path(aes(x=Depth_m, y=metadata)) +
+  facet_wrap(~key, scales="free_y") +
+  labs( x = "Sample Depth (m)", y = "Concentration (uM)") +
+  theme(legend.position="none")
+```

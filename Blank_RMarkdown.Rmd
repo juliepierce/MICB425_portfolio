@@ -15,8 +15,12 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+```{r}
+qiime2_percent = transform_sample_counts(qiime2, function(x) 100 * x/sum(x))
+ plot_bar(qiime2_percent, fill="Genus") + 
+   geom_bar(aes(fill=Genus), stat="identity") +
+   labs( x = "Sample Depth(m)", y = "Abundance (%)", title = "Genus Abundance Through Saanich Inlet Depth") +
+   theme(legend.position="right")
 ```
 
 ## Including Plots

@@ -1,0 +1,80 @@
+---
+title: "Worksheet_05"
+author: "Julia Pierce (24366429)"
+date: "4/16/2018"
+output: html_document
+---
+
+### Evidence worksheet_05 "Extensive mosaic structure" 
+
+#### Part 1 Learning objectives:
+
+* Evaluate the concept of microbial species based on environmental surveys and cultivation studies.
+
+* Explain the relationship between microdiversity, genomic diversity and metabolic potential
+
+* Comment on the forces mediating divergence and cohesion in natural microbial communities
+
+
+**General Questions**
+
+**What were the main questions being asked?**  
+-What are the differences between three strains of E. coli, two uropathogenic and one non-pathogenic?  
+-What is the genetic and OTU similarity between the pathogenic and non-pathogenic strains?  
+-How conserved are genes associated with pathogenicity/PAIs?  
+-What is the effect of lateral gene transfer on the emergence of uropathogenic E. coli strains?
+
+**What were the primary methodological approaches used?**  
+*-For clones and sequencing:*  
+Used pBluescript and M13Janus to prepare whole-genome libraries using genomic DNA. Data are collected from Applied Biosystem ABI377 and 3700n automated seqeuncers. SEQMANII is used to assemble sequence data. Primer walking and PCR-based analysis are used to finish sequencing opposite ends of linking clones. XhoI optical map of whole genome is used to order contigs and confirm contig structure, and act as a map of the whole genome.
+
+*-Sequence analysis and annotation:*  
+Annotated genome sequence in MAGPIE, defined ORFs in GLIMMER. BLAST is used to search for predicted proteins
+
+*-Shotgun sequencing and PCR:*  
+Used 90% identity match of CFT073 in either MG1655 or EDL933, 90% of both genes in alignments, and lack of equivalent match in other location in CFT073 genome used to infer orthology.
+
+**Summarize the main results or findings**   
+-The CFT073 genome is circular, with a 5 million-bp chromosomal sequence with seven times coverage.  
+
+-There is selective pressure to conserve PAI in infection and host colonization 
+
+-The genetic backbone is evolutionarily conserved among different strains through vertical gene transfer 
+
+-The location of specific regions for insertion of infectious genes are conserved, but the specificity to genes is not necessarily conserved  
+
+-There is great genetic diversity between PAIs of pathogenic/pathogenic strains, and pathogenic/non-pathogenic strains  
+
+-Each type/species of E. coli possesses combinations of island genes that confer its characteristic lifestyle or its pathogenicity. For example, the uropathogenic strain CFT073 acquired an island gene that allows it to infect the urinary tract and bloodstream without compromising its ability to colonize the intestine.
+
+-The net result of the evolution of different strains is a mosaic genome sturcture made of the newly acquired genes within the framework of E. coli's backbone genes that are used to distinguish E. coli from other close relatives
+
+**Do new questions arise from the results?**  
+-How do pathogenic E. coli compare with other pathogens, such as Shigella and Y. pestis?   
+-How can a defeinition of species be defined that accounts for the frequent loss/gain of accessory genes. Simple definitions based on phenotypic analysis and low resolution mapping don't provide a full picture  
+
+-Why isn't there evidence of genome consolidation even though E. coli has a commensal relationship, living in animal's intestines, a nutrient rich environment, for millions of years?
+
+**Were there any specific challenges or advantages in understanding the paper (e.g. did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?**   
+-The paper was written for an audience with prior knowledge of E. coli genomics and genetics; background on gene functions and locations not provided, and selective pressures leading to the retention of rare codons (etc.) were not discussed
+
+#### Part 2 Learning objectives: 
+
+* Comment on the creative tension between gene loss, duplication and acquisition as it relates to microbial genome evolution
+
+* Identify common molecular signatures used to infer genomic identity and cohesion
+
+* Differentiate between mobile elements and different modes of gene transfer
+
+
+**Based on your reading and discussion notes, explain the meaning and content of the following figure derived from the comparative genomic analysis of three E. coli genomes by Welch et al. Remember that CFT073 is a uropathogenic strain and that EDL933 is an enterohemorrhagic strain. Explain how this study relates to your understanding of ecotype diversity. Provide a definition of ecotype in the context of the human body. Explain why certain subsets of genes in CFT073 provide adaptive traits under your ecological model and speculate on their mode of vertical descent or gene transfer.**
+
+
+![](Part2_wksht5.png)
+This figure shows the mosaic structure of the different strains: the backbone of the E. coli genome is largely conserved, with larger islands occuring in the same locations for both strains (aspV, thrW, pheV, leuX, etc). There are other shorter islands for both strains, providing those functions that allow the starin to adapt the its specific environment.
+
+The study helps illustrate how wide a range of functions can be contained within the same ecotype; only 39.2% of proteins are shared amoung all three of the strains of E. coli used in this study. All three strains occupy seemingly similar environments (inside animals) yet have become highly specialized with different functions and low simialrities in protein production.
+
+Ecotype in the context of the human body: skin and hair colour varies with global region; microbiota in digestive system are based on diet; different pathogen immunities based on exposure, determined by region (ex. smallpox when collonizing the Americas); different tissues types; each type of human cell has different receptors, secretions, and surroundings that make up the extracellular environment
+
+CFT073 is uropathogenic, and certain subsets of its genes allow adaptation to the urinary tract (over the digestive track, etc.). These adaptations allow CFT073 to thrive in among the different tissue types and the different environment of the urinary tract, compared to other strains of E. coli. This is likely of horizontal gene transfer.

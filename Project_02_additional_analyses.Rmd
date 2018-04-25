@@ -1,0 +1,186 @@
+---
+title: "Numerical_type_project2"
+author: "Julia Pierce (24366429)"
+date: "4/21/2018"
+output: html_document
+---
+
+
+library(tidyverse)
+library(cowplot)
+library(phyloseq)
+library(magrittr)
+library(dplyr)
+library(ggsn)
+library(sf)
+
+load("~/Documents/MICB425_portfolio/mothur_phyloseq.RData")
+metadata = data.frame(mothur@sam_data)
+
+nosZ.1.10m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_10m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+  select(Tax.1.10 = Confident_Taxonomy, Abund.1.10 = Abundance, Query)
+
+nosZ.1.100m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_100m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+  select(Tax.1.100 = Confident_Taxonomy, Abund.1.100 = Abundance, Query)
+
+nosZ.1.120m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_120m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.1.120 = Confident_Taxonomy, Abund.1.120 = Abundance, Query)
+
+nosZ.1.135m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_135m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.1.135 = Confident_Taxonomy, Abund.1.135 = Abundance, Query)
+    
+nosZ.1.150m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_150m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.1.150 = Confident_Taxonomy, Abund.1.150 = Abundance, Query)
+
+nosZ.1.165m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_165m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.1.165 = Confident_Taxonomy, Abund.1.165 = Abundance, Query)
+
+nosZ.1.200m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_200m_MetaT/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.1.200 = Confident_Taxonomy, Abund.1.200 = Abundance, Query)
+  
+  
+    
+nosZ.2.10m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_10m/final_outputs/marker_contig_map.tsv") %>% 
+  select(Tax.2.10 = Confident_Taxonomy, Abund.2.10 = Abundance, Query)
+
+nosZ.2.100m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_100m/final_outputs/marker_contig_map.tsv") %>% 
+  select(Tax.2.100 = Confident_Taxonomy, Abund.2.100 = Abundance, Query)
+
+nosZ.2.120m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_120m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.2.120 = Confident_Taxonomy, Abund.2.120 = Abundance, Query)
+
+nosZ.2.135m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_135m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.2.135 = Confident_Taxonomy, Abund.2.135 = Abundance, Query)
+    
+nosZ.2.150m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_150m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.2.150 = Confident_Taxonomy, Abund.2.150 = Abundance, Query)
+
+nosZ.2.165m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_165m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.2.165 = Confident_Taxonomy, Abund.2.165 = Abundance, Query)
+
+nosZ.2.200m = read_tsv("~/Documents/MICB425_portfolio/TreeSAPP_output/treesapp_out_dir_200m/final_outputs/marker_contig_map.tsv") %>% 
+    select(Tax.2.200 = Confident_Taxonomy, Abund.2.200 = Abundance, Query)
+
+
+nosZ.all = nosZ.1.10m %>% 
+  full_join(nosZ.1.100m, by = "Query") %>%
+  full_join(nosZ.1.120m, by = "Query") %>%
+  full_join(nosZ.1.135m, by = "Query") %>%
+  full_join(nosZ.1.150m, by = "Query") %>%
+  full_join(nosZ.1.165m, by = "Query") %>%
+  full_join(nosZ.1.200m, by = "Query") %>%
+  full_join(nosZ.2.10m, by = "Query") %>%
+  full_join(nosZ.2.100m, by = "Query") %>%
+  full_join(nosZ.2.120m, by = "Query") %>%
+  full_join(nosZ.2.135m, by = "Query") %>%
+  full_join(nosZ.2.150m, by = "Query") %>%
+  full_join(nosZ.2.165m, by = "Query") %>%
+  full_join(nosZ.2.200m, by = "Query") %>%
+
+  mutate(Taxonomy = ifelse(!is.na(Tax.1.10), Tax.1.10,
+                    ifelse(!is.na(Tax.1.100), Tax.1.100,
+                    ifelse(!is.na(Tax.1.120), Tax.1.120,
+                    ifelse(!is.na(Tax.1.135), Tax.1.135,
+                    ifelse(!is.na(Tax.1.150), Tax.1.150,
+                    ifelse(!is.na(Tax.1.165), Tax.1.165,
+                    ifelse(!is.na(Tax.1.200), Tax.1.200,
+                    ifelse(!is.na(Tax.2.10), Tax.2.10,
+                    ifelse(!is.na(Tax.2.100), Tax.2.100,
+                    ifelse(!is.na(Tax.2.120), Tax.2.120,
+                    ifelse(!is.na(Tax.2.135), Tax.2.135,
+                    ifelse(!is.na(Tax.2.150), Tax.2.150,
+                    ifelse(!is.na(Tax.2.165), Tax.2.165,
+                    ifelse(!is.na(Tax.2.200), Tax.2.200,
+                           "unclassified"))))))))))))))) %>% 
+
+  select(-starts_with("Tax.")) %>% 
+  gather("Key", "Abundance", starts_with("Abund")) %>% 
+  separate(Key, c("Key","Type","Depth_m"), by = ".") %>% 
+  select(Depth_m, Type, Abundance, Taxonomy, Query) %>% 
+  mutate(Depth_m = as.numeric(Depth_m)) %>% 
+  mutate(Abundance = as.numeric(Abundance)) %>%
+  separate(Taxonomy, into = c("Domain", "Phylum", "Class", "Order", "Family", "Genus", "Species"), sep="; ")
+
+## Example plots
+#### How does the DNA abundance of your gene of interest differ with depth?
+
+```{r example_plot_1, include=TRUE}
+nosZ.all %>% 
+  filter(Type == "2") %>%
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+  
+ggplot(aes(x = "nosZ" , y = Depth_m)) +
+  geom_point(aes(size = Abundance)) +
+  scale_y_reverse(lim=c(200,10)) +
+  labs(title = "Abundance of the nosZ gene (DNA) at different depths",
+       x = "") +
+  theme_classic()
+```
+
+#### How does the RNA abundance of your gene of interest differ with depth? Is this similar to the DNA levels?
+
+```{r ex_plot_2, include=TRUE}
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+  
+ggplot(aes(x = Type, y = Depth_m)) +
+  geom_point(aes(size = Abundance)) +
+  scale_y_reverse(lim=c(200,10)) +
+  labs(title = "Abundance of the nosZ gene (DNA vs. RNA) at different depths",
+       x = "") +
+  theme_classic()
+```
+
+#### What taxa are responsible for your gene of interest? Are they the same with depth? With DNA versus RNA?
+```{r ex_plot_3, include=TRUE}
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+    
+ggplot(aes(x = Genus, y = Depth_m)) +
+  geom_point(aes(size = ifelse(Abundance == 0, NA, Abundance), color = Type), position = position_dodge(0.5)) +
+  scale_y_reverse(lim=c(200,10)) +
+  labs(title = "Abundance of genera with nosZ (DNA vs. RNA) at different depths") +
+  theme_classic() +
+  scale_size_continuous(name = "Abundance")
+```
+
+Or you could facet the data.
+```{r ex_plot_3_2, include=TRUE}
+nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+  
+ggplot(aes(x = Genus, y = Depth_m)) +
+  geom_point(aes(size = ifelse(Abundance == 0, NA, Abundance))) +
+  scale_y_reverse(lim=c(200,10)) +
+  facet_wrap(~Type) +
+  labs(title = "Abundance of genera with nosZ (DNA vs. RNA) at different depths") +
+  theme_classic() +
+  scale_size_continuous(name = "Abundance")
+```
+
+#### How does the abundance of your gene of interest relate to nitrogen species in Saanich?
+
+```{r , include=TRUE}
+#metadata = data.frame(mothur@sam_data)
+plot1 = nosZ.all %>% 
+  mutate(Genus = ifelse(is.na(Genus), "unclassified", Genus)) %>% 
+  
+ggplot(aes(x = Genus, y = Depth_m)) +
+  geom_point(aes(size = ifelse(Abundance == 0, NA, Abundance), color = Type), position = position_dodge(0.5)) +
+  labs(y = "") +
+  theme_classic() +
+  scale_size_continuous(name = "Abundance")
+
+plot2 = metadata %>% 
+  arrange(Depth_m) %>% 
+  
+ggplot(aes(x = N2O_nM, y = Depth_m)) +
+    geom_point() +
+    geom_path(aes(group = 1)) +
+    scale_y_reverse(lim=c(200,10)) +
+  theme_classic() +
+  labs(y = "Depth (m)",
+       x = "Nitrous Oxide (nM)")
+
+plot_grid(plot2, plot1, labels=c("A", "B"), rel_widths=c(1/4, 3/4))
+```

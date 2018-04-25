@@ -1,0 +1,30 @@
+---
+title: "Project2_Additional_Analysis"
+author: "Julia Pierce (24366429)"
+date: "4/21/2018"
+output: html_document
+---
+
+library(tidyverse)
+library(cowplot)
+
+Data.10m = read_tsv("10m_marker_contig_map.tsv") #%>% 
+  #select(Tax.DNA.10 = Confident_Taxonomy, Abund.DNA.10 = Abundance, Query)
+
+100m = read_tsv("10m_marker_contig_map.tsv") %>% 
+  select(Tax.RNA.10 = Confident_Taxonomy, Abund.RNA.10 = Abundance, Query)
+
+120m = read_tsv("mcrA_DNA_200m_marker_contig_map.tsv") %>% 
+    select(Tax.DNA.200 = Confident_Taxonomy, Abund.DNA.200 = Abundance, Query)
+
+135m = read_tsv("mcrA_RNA_200m_marker_contig_map.tsv") %>% 
+    select(Tax.RNA.200 = Confident_Taxonomy, Abund.RNA.200 = Abundance, Query)
+    
+150m = read_tsv("mcrA_RNA_10m_marker_contig_map.tsv") %>% 
+    select(Tax.RNA.10 = Confident_Taxonomy, Abund.RNA.10 = Abundance, Query)
+
+165m = read_tsv("mcrA_DNA_200m_marker_contig_map.tsv") %>% 
+    select(Tax.DNA.200 = Confident_Taxonomy, Abund.DNA.200 = Abundance, Query)
+
+200m = read_tsv("mcrA_RNA_200m_marker_contig_map.tsv") %>% 
+    select(Tax.RNA.200 = Confident_Taxonomy, Abund.RNA.200 = Abundance, Query)

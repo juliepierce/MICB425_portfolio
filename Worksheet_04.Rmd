@@ -1,0 +1,66 @@
+---
+title: "Worksheet_04"
+author: "Julia Pierce (24366429)"
+date: "2/26/2018"
+output: html_document
+---
+
+### Evidence worksheet_04 “Bacterial Rhodopsin Gene Expression”
+#### Learning objectives:
+* Discuss the relationship between microbial community structure and metabolic diversity
+
+*	Evaluate common methods for studying the diversity of microbial communities
+
+*	Recognize basic design elements in metagenomic workflows
+
+**General Questions**
+
+**What were the main questions being asked?**  
+-What is the purpose of Proteorhodopsin, and what genes are required for full functionality, as well as which of these genes are already present in E. coli?  
+-How is Proteorhodopsin inhibited via the proton pump?  
+-What are the similarities between existing strains and the studied mutated E. coli?  
+
+**What were the primary methodological approaches used?**  
+*-Fosmid library*  
+Used to screen for the genes associated with Proteorhodopsins
+
+*-Screening for PR expression*  
+Used high-density colony macroarray and visually detected color (red/orange). If color was present, representing a positive result, the fosmid DNA was transfered to E coli. and then rechecked to make sure the color was conferred by the fosmid.
+
+*-In vitro transposition and full fosmid sequencing*  
+Done using the EZ-Tn5 kan-2 insertion kit.The transposition reaction was carried out by electroporation into EPI300 cells, and selecting those clones that contained fosmids with insertions. LB plates were used to analyze the color phenotype of the individual clone instertions. DNA sequencing was performed, with the complete DNA sequence assembled via Sequencher version 4.5, and annotated using FGENSB and Artemis version 6.
+
+*-Cartenoid extractions*  
+Overnight cultures were diluted and incubated with shaking. At that point, L-arabinose was added and cultures were further incubated for another 16 h. Cells were harvested, rinsed, and frozen at 20°C in the dark. Using sonication, frozen cells were extracted, and then centrifuged to form a pellet. The supernatant was further filtered, and extracts concentrated by evaporation under dry nitrogen gas. The steps for extraction were carried out in darkness or low-light to keep carotenoid photooxidation to a minimum.
+
+*-HPLC Analysis*  
+Used high-performance liquid chromatography to analyze carotenoids; identified cartenoids through comparison of measured absorbance spectra and retention times with verified standards
+
+*-Proton pumping experiments (and inhibition)*  
+Two millimeter cell suspension was placed in a photosynthetic chamber and kept at 22°C.
+
+*-ATP measurements*  
+ATP concentration was measured with a luciferase-based assay, using samples taken at every timestep. 
+
+**Summarize the main results or findings**  
+-The comprehensive collections of genes necessary for the PR-associated retinal biosynthesis and light-activated proton translocation and photophosphorylation in E. coli is: crtE, for putative geranylgeranyl pyrophosphate (GGPP) synthase; crtI, for phytoene dehydrogenase; crtB, phytoene synthase; crtY, lycopene cyclase; blh, 15,15 - - carotene dioxygenase; and idi, isopentenyl diphosphate (IPP) del-isomerase  
+
+-HF10_19P19 and HF10_25F10 independently express a functional PR with light- activated proton-translocating activity  
+
+-The idi gene wasn't required for full function: E. coli already have the ability to encode IPP-isomerase, the function provided by idi  
+
+-metagenomic libraries can be used to screen large-insert DNA for new phenotypes and activities directly and without subcloning  
+
+-The genes necessary for phototrophic capabilities can be passed on with a single lateral transfer, hence the widespread capability in nature, particularly planktonic marine micoorganimsms. The only prerequisite is the ability to synthesize FPP, a common biosynthesis intermediary  
+
+-In low respiratory conditions, the H^+^-ATP synthase acts as an ATPase, driving proton movement to maintain the proton-motive force and hydrolize ATP
+
+**Do new questions arise from the results?**  
+-The reason for a lack of orange color and low levels of retinal when the PR gene is disrupted with transposon insertions; is it due to pathway inhibition from product accumulation, polar effect due to transposon insertion in downstream expression, or some mechanism not previously considered  
+
+-There has not yet been a conclusive connection between light stimulation and growth rate; in studies using natural seawater incubations as well as PR-containing isolates, no enhanced growth was detected in the presence of light. In another study using PR-expressing marine flavobacterium, a significant enhancement of growth rate was found, but was not conclusively linked to PR
+
+**Were there any specific challenges or advantages in understanding the paper (e.g. did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?**  
+-Provided good background on the PR, and the function of the genes involved
+
+-The authors write for an audience with a background knowledge of genetic manipulation, as well as the understood competitive advantage of a light-activated proton pump for ATP synthesis

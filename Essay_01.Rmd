@@ -1,0 +1,51 @@
+---
+title: "Humans as Environmental Stewards"
+author: "Julia Pierce (24366429)"
+date: "4/25/2018"
+output: html_document
+---
+
+Microorganisms have been the driving force behind Earth's environment for virtually all of history, controlling the composition of the atmosphere and chemical cycles since life first emerged [1]. It is only in recent times, since the Industrial Revolution that humans have had a noticeable effect on the environment. This leads to the question, who should act as steward for the environment and "man the helm of spaceship Earth", the humans or the microbes? Humans are best equipped for the task. Humans are able to engineer nutrient cycles as needed, and more accurately control nutrient allocation; humans have already proven to be capable of causing positive change in our environment, and; humans are better equipped to direct and hasten the abilities of microorganisms, as a tool. Although microorganisms are entrenched in the health and functioning of the environment, the ability of humans to direct our focus and attack individual problems as they arise make us the better caretaker of the Earth.
+
+Humans are able to engineer geochemical cycles and accurately control when and where these nutrients are used. Humans are able to mine for phosphorus, and manufacture liquid ammonia from nitrogen and hydrogen gasses using the Haber-Bosch process [2, 3]. This ammonia is then used in fertilizers, to keep up with human agricultural demand, and in various other industrial processes, such as the manufacturing of explosives [4,5]. With the invention of chemical fertilizers, humans ability to produce higher yields of crops kept hundreds of thousands from starvation [6]. Some may argue that phosphorus reserves are dwindling, and the Haber-Bosch process is energy intensive and requires large quantities of hydrogen gas, preventing this from being sustainable. However, there are other emerging methods of attaining fertilizer through nutrient reclamation. In work currently occurring at UBC, researchers are developing methods for the extraction of struvite (a slow-release fertilizer that contains NH~4~^+^, P, and K) from wastewater [7]. This method does not require hydrogen gas, or the high pressures and energy expenditure necessary to the Haber-Bosch process, and precludes the need to mine for phosphorus. Humans' ability to engineer chemical cycles is not restricted to nitrogen and phosphorus. Humans are also capable of producing other nutrients, for example: by mining for iron, producing hydrogen and oxygen via electrolysis of water, and producing biogas for use as an energy source in anaerobic digestion [8, 9, 10]. Additionally, by being in control of nutrients, humans can control where to apply these nutrients so that they are apportioned based on need. 
+  
+Humans have already shown they have the ability to repair undesired shifts in the environment. In 1985, a hole in the ozone layer over the Antarctic was discovered, attributed to the use of chlorofluorocarbons (CFCs). Many nations signed a treaty to eventually stop using CFCs altogether, to heal the hole, and there is now definitive proof that it is working, and is working due to the decline of CFCs [11]. Humans have also made numerous changes to technology in response to worsened environmental conditions. Diesel particulate filters on the exhaust pipes of cars minimize the emission of particulate matter, and there are emerging exhaust filters that are able to reduce carbon emissions of CO~2~ and other pollutants like carbon monoxide [12, 13]. Humans have made numerous successful changes for the sake of environmental protection.
+
+Humans are also able to skillfully direct the abilities of microorganisms to achieve our own goals, and to do so on timescales relevant to humans and other multi-cellular life. There are many situations in which microorganisms can clean a polluted area, with the addition nutrients. There are microorganisms that have the ability to clean oil spills, i.e. consume hydrocarbons, but the rate of consumption depends on the size of the oil droplets, and sufficient nutrients for sustained life (bioavailable nitrogen and phosphorus). With human assistance to provide these necessary conditions, the timeframe of oil spill cleanup accelerates [14]. Bioremediation of terrestrial sites follows a similar pattern: nutrients and other environmental conditions are provided for and created, to accelerate the rate of microbial consumption. Such methods are used for Superfund Sites in the United State, using injection wells to provide oxygen, nutrients, etc. to deep sediments [15]. Humans also harness the abilities of microorganisms via wastewater treatment. By (most often) providing oxygen during biologically activated processes, microorganisms consume the incoming waste [16]. If raw waste were to be released to the environment, it would still be degraded by microorganisms, to a degree, but the dissolved oxygen of the receiving water body would also be consumed, which leads to anoxic zones and environmental degradation [16]. The guidance of humans allows microorganisms to become an effective another tool, rather than mindless engines.
+
+Humans are the best-equipped caretakers of Earth. Humans can intervene on nutrient cycles as is necessary, have previously demonstrated an ability to change environmental imbalances for the better, and are better able to make use of the ability of microorganisms for environmental remediation. Microorganisms have been the driving force behind Earth's environment for virtually all of history, and its time they step aside.
+
+**References**
+
+1. Nisbet EG, Sleep NH. 2001. The habitat and nature of early life. Nature. **409**:1083-1091.
+The Microbial Engines That Drive Earth's Biogeochemical Cycles. Science. 320:1034-1039.
+
+2. [Vella H. 2016. What's shaping the future of phosphorus?. Mining Technology. Online. ](https://www.mining-technology.com/features/featurephosphorus-whats-shaping-the-future-of-this-vital-element-4913074/)
+
+3. [Clark J. 2013. The Haber Process. ChemGuide. Online.](https://www.chemguide.co.uk/physical/equilibria/haber.html)
+
+4. [McKenzie R. 1998. Crop nutrition and fertilizer requirements. Alberta Agricuture and Forestry. Online.](https://www1.agric.gov.ab.ca/$department/deptdocs.nsf/all/agdex3791)
+
+5. [PubChem, Open Chemistry Database. 2018. Ammonium Nitrate, Compound Summary for CID 22985. National Center for Biotechnology Information. Online.](https://pubchem.ncbi.nlm.nih.gov/compound/ammonium_nitrate)
+
+6. [Hazell, Peter B.R. (2009). The Asian Green Revolution. IFPRI Discussion Paper. International Food Policy Research Institute. GGKEY:HS2UT4LADZD.](https://books.google.ca/books?id=frNfVx-KZOcC&pg=PA1&redir_esc=y#v=onepage&q&f=false)
+
+7. [Disha AZ. 2018. Nitrogen recovery from municipal wastewater through newberyite to struvite crystallization process. MaSc. UBC. University of British Columbia, Vancouver, BC.](https://open.library.ubc.ca/cIRcle/collections/ubctheses/24/items/1.0364400)
+
+8. [Basov V. 2015. True giants of mining:World's top 10 iron ore mines. Mining.com. Online.](http://www.mining.com/true-giants-of-mining-worlds-top-10-iron-ore-mines/)
+
+9. [Sandru O. 2018. Hydrogen from water - 3 production methods. The Green Optimist. Online.](https://www.greenoptimistic.com/hydrogen-from-water/)
+
+10. [Pennsylvania State. 2018. Anaerobic Digestion:Biogas production and odor reduction. PennState Extension. Online.](https://extension.psu.edu/anaerobic-digestion-biogas-production-and-odor-reduction)
+
+11. [Reiny S. 2018. NASA Study: First direct proof of ozone hole recovery due to chemicals ban. NASA. Online.](https://www.nasa.gov/feature/goddard/2018/nasa-study-first-direct-proof-of-ozone-hole-recovery-due-to-chemicals-ban)
+
+12. [RAC.2018. Dielsel particulate filters:what you need to know. RAC Drive. Online.](https://www.rac.co.uk/drive/advice/emissions/diesel-particulate-filters/)
+
+13. [Campos M.2011. Exhaust filter cuts harmful particles and emissions. Luxury Coach and  Transportation. Online.](https://www.lctmag.com/news/40081/exhaust-filter-cuts-harmful-particles-and-emissions)
+
+14. [Biello D., 2010](https://www.scientificamerican.com/article/how-microbes-clean-up-oil-spills/)
+
+15. [United States Environmental Protection Agency, 2001](https://www.epa.gov/sites/production/files/2015-08/documents/bioremediation_542r01019.pdf)
+
+16. Metcalf Eddy. 1972. Wastewater Engineering: Treatment/Disposal/Reuse. McGraw Hill. Second Edition.

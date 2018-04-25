@@ -1,0 +1,104 @@
+---
+title: "Problem_Set_3"
+author: "Julia Pierce (24366429)"
+date: "2/16/2018"
+output: html_document
+---
+
+### Problem set_03 “Metagenomics: Genomic Analysis of Microbial Communities”
+#### Learning objectives: 
+Specific emphasis should be placed on the process used to find the answer. Be as comprehensive as possible e.g. provide URLs for web sources, literature citations, etc.  
+
+#### Specific Questions:
+**How many prokaryotic divisions have been described and how many have no cultured representatives (microbial dark matter)?**  
+-As of 2016, 89 bacterial phyla, 20 archael phyla. There are likely up to 1500 bac phyla (many in the "shadow biosphere", which we can't culture to use to determine the actual number of phyla) [(1)](https://www.sciencedirect.com/science/article/pii/S1369527416300558)
+
+-As of 2003, 52 major bacterial phyla and only 26 had been sequenced [(2)](https://www.ncbi.nlm.nih.gov/pubmed/14527284)
+
+--Things are changing quickly and we are constantly making new discoveries, making an exact number unrealistic
+
+**How many metagenome sequencing projects are currently available in the public domain and what types of environments are they sourced from?**  
+-On the EBI database 1501 projects and 87419 samples public; EBI is only one of many sites on which such datasets are available [(3)](https://www.ebi.ac.uk/metagenomics/)
+
+-NIH, the human microbiome project [(4)](https://www.hmpdacc.org/resources/data_browser.php)
+
+--There are an uncountable number available from all sorts of environments
+
+**What types of on-line resources are available for warehousing and/or analyzing environmental sequence information (provide names, URLS and applications)?**   
+Numerous resources, non-exhaustive list of 12 metagenomics resources here [(5)](https://www.sciencedirect.com/science/article/pii/S1672022915001424)
+
+*[MG-RAST](https://metagenomics.anl.gov/)*
+Multiple pipelines available, online storage available with 215,773 metagenome dataset and 30,589 public metagenomes
+
+*[IMG/M](http://img.jgi.doe.gov/m)*	
+Multiple pipelines available, online storage available with	32,802 genome and 5234 metagenome dataset
+
+*[METAREP](http://jcvi.org/metarep/)*	
+Multiple pipelines available, no online storage
+
+*[CoMet](http://comet.gobics.de/)*	
+Multiple pipelines available, no storage
+
+*[METAGENassist](http://www.metagenassist.ca/METAGENassist/)*	
+Multiple pipelines available, no storage
+
+*[MetaABC](http://metaabc.iis.sinica.edu.tw/)*	
+Database of reference genomes with 52 datasets online
+
+*[MyTaxa](http://enve-omics.ce.gatech.edu/mytaxa/)*
+Database of reference genes and genomes (NCBI), no storage
+
+*[metaMicrobesOnline](http://meta.microbesonline.org/)*
+Multiple pipelines available, online storage available with 155 metagenome and 3527 genome dataset
+
+*[EBI Metagenomics](https://www.ebi.ac.uk/metagenomics/)*
+Multiple pipelines available, online storage available with 141 projects and 5800 dataset
+
+*[CAMERA](http://camera.calit2.net/)*
+Multiple pipelines available, online storage available with	128 projects and 2660 samples
+
+*[METAVIR](http://metavir-meb.univ-bpclermont.fr/)*
+Multiple pipelines available, online storage available with	170 viral metagenomic dataset and 335 projects
+
+*[VIROME](http://virome.dbi.udel.edu/)*
+Multiple pipelines available, online storage available with	466 libraries containing 24,386,816 reads
+
+**What is the difference between phylogenetic and functional gene anchors and how can they be used in metagenome analysis?**
+
+* Phylogenetic gene anchor:  
+    * Based on passinng of genes to daughter cells (vertical gene transfer)  
+    * Can be used to determine phylogenetic info, reconstruct trees  
+
+* Functional gene anchors:  
+    * Based on functions encoded in genes  
+        + function may have been confered via vertical gene transfer **or**   
+        + from  non-phylogenetically linked microbe via horizontal gene transfer    
+    *  Can use to make inferences on hiabitat/redox conditions, involvement in chemical cycles
+    
+ *  Based on: [(6)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC539003/)
+
+**What is metagenomic sequence binning? What types of algorithmic approaches are used to produce sequence bins? What are some risks and opportunities associated with using sequence bins for metabolic reconstruction of uncultivated microorganisms?**    
+
+* Binning: grouping reads or contigs and assigning OTUs [(7)](https://doi.org/10.1093%2Fbib%2Fbbs054) 
+* Binning algorithms either [(8)](https://doi.org/10.1073%2Fpnas.91.26.12837):
+    + Use previously determined sequences (supervised classifiers) 
+        + Can perform alignments against databases, try to separate using organism-specific characteristics of the DNA 
+            + ex. GC content, codon usage
+    + Try to find new groups (unsupervised classifiers) 
+    
+* Risks [(9)](https://academic.oup.com/bib/article/13/6/669/193900):
+    + Primarily, query sequences originating from the genomes of most microbes in an environmental sample lack taxonomically related sequences in existing reference databases. 
+    + Sequencing platform limitations (currently improving)
+        + Short read lengths, sequencing errors/artifacts
+        + Size of metagenomic dataset, need for efficient algorithms
+
+* Opportunities: 
+    + Learn new info
+    + Track species evolution
+
+**Is there an alternative to metagenomic shotgun sequencing that can be used to access the metabolic potential of uncultivated microorganisms? What are some risks and opportunities associated with this alternative?**      
+Few, one example provided here: 
+
+* Single cell genomics [(10)](https://www.sciencedirect.com/science/article/pii/S1369527412001166):
+    + Know you are sequencing cell of interest, full picture its functions, etc.
+    + Amplication bias, allelic dropouts and preferential allelic amplification, nucleotide copy errors, etc. [(11)](http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004126)

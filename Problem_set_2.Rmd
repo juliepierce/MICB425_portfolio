@@ -1,44 +1,34 @@
 ---
-title: "Problem_Set_2"
+title: "Problem_Set_02 'Microbial Engines'"
 author: "Julia Pierce (24366429)"
 date: "2/7/2018"
 output: html_document
 ---
+## Problem_Set_02 "Microbial Engines"
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+**Learning objectives:** Discuss the role of microbial diversity and formation of coupled metabolism in driving global biogeochemical cycles.
 
-###What are the primary geophysical and biogeochemical processes that create and sustain conditions for life on Earth? How do abiotic versus biotic processes vary with respect to matter and energy transformation and how are they interconnected?
 
-Tectonic movement along with photochemical reactions in the atmosphere allow for mixing and partitioning of chemical substrates on Earth. 
+**What are the primary geophysical and biogeochemical processes that create and sustain conditions for life on Earth? How do abiotic versus biotic processes vary with respect to matter and energy transformation and how are they interconnected? ** 
+Tectonic movement along with photochemical reactions in the atmosphere allow for mixing and partitioning of chemical substrates on Earth. This cycling of nutrients allows a steady supply of substrates (food to sustain life) and the removal of products (which can be toxic, and which continue on through their chemical cycle to again become substrates).
 
-Geophysical (abiotic): Tectonics (Acid/base), transfer of protons without electrons, atmospheric photochemical processes (photochemistry/radical chemistry = ‘magic’)
-Biogeochemical: 
- (Redox)
+Abiotic processes tend to rely on acid/base reactions, meaning the transfer of protons. Biotic processes rely on redox reactions, which occur using a series of electron and proton transfers from a limited set of substrates. Abiotic and biotic cycles feed into eachother, each cycle using the products as inputs/substrate into their own cycles. This interconnectedness helps maintain these cycles, and prevets substrates on Earth from being transformed completely to end products and depleting substrates required for life.
 
-###Why is Earth’s redox state considered an emergent property?
+**Why is Earth’s redox state considered an emergent property?**  
+The Earth’s redox state is considered an emergent property because it depends on both geochemical processes and microbial metabolic processes. Depending on geochemical processes, there will be different nutrient niches, which will contain different populations of microbes. As these microbes perform their various metabolic processes, different byproducts will be returned to the environment. Thus, as geochemical cycles and microbial metabolic processes shift and change in an area, the redox state of the Earth also sifts.
  
-The earth’s redox state is considered an emergent property because it depends on both geochemical processes and microbial metabolic processes. 
- 
-###How do reversible electron transfer reactions give rise to element and nutrient cycles at different ecological scales? What strategies do microbes use to overcome thermodynamic barriers to reversible electron flow?
- 
- Reversible electron transfer reactions give rise to element and nutrient cycles because of the thermodynamic conditions that make each reaction favorable. Specifically, the rate at which each reaction occurs is determined by the conditions of the environment (i.e. abundance of substrates, products, et. cetera) thus allowing for nutrients to cycle in a stable manner. 
+**How do reversible electron transfer reactions give rise to element and nutrient cycles at different ecological scales? What strategies do microbes use to overcome thermodynamic barriers to reversible electron flow? ** 
+Reversible electron transfer reactions give rise to element and nutrient cycles based on different environmental conditions that allow both the forward and reverse reaction to be thermodynamically favorable. As both forward and reverse reaction are favorable under different environmental conditions (substrate availability, products, etc.), a stable nutrient cycle arises. These cycles can be carried out by multiple micoorganisms that are spatially separated, like the nitrogen cycle. Others, like methane formation and oxidation can be carried out by closely related microbes. When it is necessary to overcome thermodynamic barriers, energy (adenosine 5 ́-triphosphate) can be expended (such as in carbon fixation) to do the reverse of energy producing (acetate oxidation to carbon dioxide) reactions.
 
-###Using information provided in the text, describe how the nitrogen cycle partitions between different redox “niches” and microbial groups. Is there a relationship between the nitrogen cycle and climate change?
-
+**Using information provided in the text, describe how the nitrogen cycle partitions between different redox “niches” and microbial groups. Is there a relationship between the nitrogen cycle and climate change?**  
 The different stages of the nitrogen cycle all require different amounts of oxygen, corresponding to different redox niches, and the other microbes that will be in that environment. In nitrogen fixation, nitrogen gas is fixed from our atmosphere into ammonium. This is done by nitrogenase, which is inhibited by oxygen, yet this is still done in many microbes in aerobic environments. Nitrification, the oxidation of ammonium to nitrite and finally nitrate, happens in aerobic environments. Denitrification, the anaerobic oxidation of nitrate and nitrite to nitrogen gas, occurs in anoxic/anaerobic environments.
 Indirectly, the nitrogen cycle is connected to climate change. All microbes require nitrogen to synthesize protein and nucleic acids, and the only method of nitrogen fixation is via microorganisms. The nitrogen cycle is what controls the amount of available fixed nitrogen, which in turn affects the number of microbes carrying out various other reactions, which in turn produces the Earth’s atmosphere. Additionally, if something were to shift in the nitrogen cycle and affect those microbes involved, it would in turn affect the overall microbial community. The nitrogen cycle does not directly affect climate change, as only nitrogen and hydrogen gas are emitted during nitrogen fixation, nitrification, or denitrification, neither of which are greenhouse gases.
- 
 
-###What is the relationship between microbial diversity and metabolic diversity and how does this relate to the discovery of new protein families from microbial community genomes?
- 
-Although there is enormous genetic diversity in nature, there remains a relatively stable
-set of core genes coding for the major redox reactions essential for life and biogeochemical cycles. Thus, microbial diversity does not necessarily entail diversity in proteins involved in metabolism. 
+**What is the relationship between microbial diversity and metabolic diversity and how does this relate to the discovery of new protein families from microbial community genomes?**  
+Even though microorganisms are exteremely diverse, there still exists a constant set of core genes
+that control the predominant redox reactions that play an integral role in life and biogeochemical cycles. So, while microbes themselves are diverse they share many common proteins (etc.) in their metabolism.
 
-It is hypothesized that there is limitless evolutionary diversity in nature. The rate of discovery of unique protein families has been proportional to the sampling effort, with the number of new protein families increasing approximately linearly with the number of new genomes sequenced.
+Theoretically, there can be limitless evolutionary diversity in nature. We are still discovering unique protein families, in proportion to sampling efforts. As more genomes are sequenced, more protein families are discovered.
 
-
-###On what basis do the authors consider microbes the guardians of metabolism?
-
-Temporary and simultaneous guardianship because of the nature of microbial evolution from horizontal and vertical gene transfer, which can change which phenotype is dominant at the time. A dominant phenotype protects the metabolic pathway in the environment, and if it does not survive environmental perturbations applying selective pressures on pathway genes, then it will disappear. Humans could possibly replicate the individual pathways, but the overall metabolic biogeochemical processes that control the flow of electrons can only be done by microbes.
+**On what basis do the authors consider microbes the guardians of metabolism?**
+Horizontal and vertical gene transfer have allowed metabolic pathways to be widespread amoung microbes. Thus, even if an environmental change makes the given metabolic pathway unfavorable, there are other surviving microorganisms containing the genes for the metabolic pathway. The given metabolic pathway may not even be used by the surviving microbe, but given environmental pressures the pathway may again be thermodynamically favorable, and the microorganism can again express the metabolic pathway.

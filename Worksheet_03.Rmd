@@ -1,0 +1,51 @@
+---
+title: "Worksheet_03"
+author: "Julia Pierce (24366429)"
+date: "2/20/2018"
+output: html_document
+---
+
+
+### Evidence worksheet_03 "The Anthropocene" via *A safe operating space for humanity*, Rockstrom et al
+
+#### Learning objectives:
+* Evaluate huamn impacts on the ecology and biogeochemistry of Earth systems.
+
+**What were the main questions being asked?**
+Since the Industrial Revolution, human activity has been changing the environment, and continued disruption will cause dangerous effects for humans. The paper aimed to define which Earth-system processes  help maintain environmental stability, as well as the threshold of these systems within which humans can safely operate. To determine whether we are within safe limits, the current operating level for each of these systems also needed to be defined.
+
+**What were the primary methodological approaches used?**
+Used three main branches of science to determine the key Earth-system processes and their safe operation thresholds. The first looks at ecological economics, the capacity of the Earth to support human activity and wellbeing based on biochemical constraints. The second looks at sustainability and changes globally, in relation to human activity and processes of the Earth. The last looks into the capacity of systems to restabilize and sustain through perterbations in the environment with a focus on thresholds and changing states.
+
+**Summarize the main results or findings**
+Nine Earth-system processes that help maintain environmental stability:
+  1) Climate change
+  2) Rate of biodiversity loss (terrestrial and marine)
+  3) Interference with the nitrogen and phosphorus cycles
+  4) Stratospheric ozone depletion
+  5) Ocean acidification
+  6) Global freshwater use
+  7) Change in land use
+  8) Chemical pollution
+  9) Atmospheric aerosol loading
+
+We are getting close to the threshold for global freshwater use, change in land use, ocean acidification, and interference with the global phosphorus cycle. We have already surpassed the threshold for climate change, rate of biodiversity loss, and interference with the nitrogen cycle. 
+
+Climate change is defined by atmospheric carbon dioxide concentration, with a threshold of 350 ppmv and a current level of 387 ppmv. Increasing carbon dioxide levels is causing an increase in global temperature, which causes instability of the polar ice sheets and is causing destabilization of other systems.
+
+The Rate of biodiversity loss is quantified by the extinction rate, with a threshold of 10 species per million species per year, and a current level of over 100 species per million species per year. The current extinction rate is the highest it has been since the last global mass-extinction. As biodiversity is lost, ecosystem resilience is lost which in turn affects the safe operating thershold of the other Earth-system processes.
+
+Interference in the nitrogen cycle is quantified by the amount of nitrogen gas removed from the atmosphere for human use, with a threshold of 35 millions of tonnes per year and a current level of 121 millions of tonnes per year. A lot of this manufactured nitrogen ends up in the environment, polluting waterways and incrasing turbidity in lakes, building up in the earth, and releasing gasses including nitrous oxide (an important greenhouse gas) to the environment.
+
+**Do new questions arise from the results?**
+The threshold, current level, and pre-industrial revolution level for atmospheric aerosol loading and chemical pollution are still being determined. There is still a measure of uncertainty for all the system thresholds, particularly that of nitrogen, and these values will become less uncertan as our understanding of these systems and their interactions evolves.
+
+The feedback between the nine Earth system processes isn't fully understood, and a change in one of the Earth processes will affect the behavior and safe operating threshold of the other Earth systems. This will effect the system's safe operating range and the overall behavior in unknown ways. The timescale over which dangerous environmental change and feedback within the systems occurs is also unknown. This is true at all environmental scales, especially globally.
+
+The thresholds for these systems are presented, as well as our current operating level, but it brings up questions of how feasible these thresholds are. For the three system thresholds we have already surpassed, it is hard to get a sense of scale for how much we would need to reduce activty to operate below the thershold. Particularly for nitrogen cycle interference, which we need to reduce to 25% of current production, this is a daunting value. WHat would this actually mean for agriculture and food production? Could we still meet the needs of the global population at this expected level of production? If the detrimental effects from our nitrogen use stem from the release of fertilizers to the environment, rather than the demand on nitrogen gas from our atmosphere, are there methods available to prevent this release? I don't expect this paper to discuss all of these questions, but this is where my mind immediately goes when I read these results.
+
+**Were there any specific challenges or advantages in understanding the paper (e.g. did the authors provide sufficient background information to understand experimental logic, were methods explained adequately, were any specific assumptions made, were conclusions justified based on the evidence, were the figures or tables useful and easy to understand)?**
+The paper didn't include much explanation of methods, or the determination of the nine Earth-system processes that maintain environmental stability. Uncertainties and risks used to determine the thersholds were also mentioned, but were not quantified in any way. There is another resource referenced for their analysis, but when the cited paper was checked the methodology was included in supplementary material that couldn't be found. 
+
+
+The figure was easy to understand and a good for visualizing threshold vs. current operating level, to see how 'dire' the problem is. I also appreciated that they broke down the problem areas into system processes as well as metrics for those systems. Providing the overall system makes it easier to compartmentalize the issues while still understanding their interconnectedness, as compared to just providing the metrics of interest. 

@@ -1,0 +1,182 @@
+---
+title: "debug"
+author: "Julia Pierce (24366429)"
+date: "3/14/2018"
+output: html_document
+---
+
+```{r}
+library(phyloseq)
+library(knitr)
+library(tidyverse)
+```
+
+**Depth**
+General linear model for each OTU  
+```{r}
+#Cellulophaga
+nosZ.all %>% 
+  filter(Genus=="Cellulophaga") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary() 
+
+#DSM
+nosZ.all %>% 
+  filter(Genus=="DSM") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary() 
+
+#Geobacillus
+nosZ.all %>% 
+  filter(Genus=="Geobacillus") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Ignavibacterium
+nosZ.all %>% 
+  filter(Genus=="Ignavibacterium") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Leptospira
+nosZ.all %>% 
+  filter(Genus=="Leptospira") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Maribacter
+nosZ.all %>% 
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Pseudovibrio
+nosZ.all %>% 
+  filter(Genus=="Pseudovibrio") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Pyrobaculum
+nosZ.all %>% 
+  filter(Genus=="Pyrobaculum") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Rhodanobacter
+nosZ.all %>% 
+  filter(Genus=="Rhodanobacter") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Robiginitalea
+nosZ.all %>% 
+  filter(Genus=="Robiginitalea") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Overall
+nosZ.all %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+```
+**Repeated for all OTUs within domain and then corrected for multiple comparisons.**
+
+```{r}
+p.adjust(c(0.9862, 0.4262, -geobac, -ignav, -lepto, 0.6306, -pseudo, -pryo, -rhodan, 0.3823, 0.0005024), method="fdr")
+```
+
+**N2O**
+General linear model for each OTU  
+```{r}
+#Cellulophaga
+nosZ.all %>% 
+  filter(Genus=="Cellulophaga") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary() 
+
+#DSM
+nosZ.all %>% 
+  filter(Genus=="DSM") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary() 
+
+#Geobacillus
+nosZ.all %>% 
+  filter(Genus=="Geobacillus") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Ignavibacterium
+nosZ.all %>% 
+  filter(Genus=="Ignavibacterium") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Leptospira
+nosZ.all %>% 
+  filter(Genus=="Leptospira") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Maribacter
+nosZ.all %>% 
+  filter(Genus=="Maribacter") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Pseudovibrio
+nosZ.all %>% 
+  filter(Genus=="Pseudovibrio") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Pyrobaculum
+nosZ.all %>% 
+  filter(Genus=="Pyrobaculum") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Rhodanobacter
+nosZ.all %>% 
+  filter(Genus=="Rhodanobacter") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Robiginitalea
+nosZ.all %>% 
+  filter(Genus=="Robiginitalea") %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+
+#Overall
+nosZ.all %>% 
+
+  lm(Abundance ~ Depth_m, .) %>% 
+  summary()
+```
+**Repeated for all OTUs within domain and then corrected for multiple comparisons.**
+
+```{r}
+p.adjust(c(0.9862, 0.4262, -geobac, -ignav, -lepto, 0.6306, -pseudo, -pryo, -rhodan, 0.3823, 0.0005024), method="fdr")
+```
